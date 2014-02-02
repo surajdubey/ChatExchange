@@ -17,7 +17,7 @@ class SEChatBrowser:
     self.session=requests.Session()
     self.chatfkey=""
     self.chatroot="http://chat.stackexchange.com"
-    self.sockets={}
+    self.sockets={'false':'true'}
   def loginSEOpenID(self,user,password):
     fkey=self.getSoup("https://openid.stackexchange.com/account/login").find('input',{"name":"fkey"})['value'] 
     logindata={"email":user,"password":password,"fkey":fkey}
